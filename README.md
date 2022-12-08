@@ -1,36 +1,27 @@
 # README
 
-# 開発言語
-* Ruby3.0.1
-* Rails6.1.7
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-<br>
+Things you may want to cover:
 
-# 就職Termの技術
+* Ruby version
 
-* rails_admin
-* お気に入り機能
-* 
+* System dependencies
 
+* Configuration
 
-<br>
+* Database creation
 
-# カリキュラム外の技術
-* 
+* Database initialization
 
-<br>
+* How to run the test suite
 
-# 実行手順
-```
-$ git clone git@github.com:idesho/Oshisen_Kawasaki.git
-$ cd Oshisen_Kawasaki
-$ bundle
-$ rails db:create && rails db:migrate
-$ rails s
-```
+* Services (job queues, cache servers, search engines, etc.)
 
-<br>
+* Deployment instructions
 
+<<<<<<< HEAD
 # カタログ設計
 
 
@@ -53,3 +44,6 @@ $ rails s
 
 # 画面遷移図
 ![Screen]
+=======
+* ...
+>>>>>>> parent of 46bf121 (readme編集)
