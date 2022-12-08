@@ -42,7 +42,7 @@ $ rails s
 <br>
 
 # ワイヤーフレーム
-https://prottapp.com/app/#/projects/62f1cd7e86e4657181797c76
+
 
 <br>
 
