@@ -1,6 +1,19 @@
-<h1>Editing User</h1>
+<h1>Profile editing</h1>
 
-<%= render 'form', user: @user %>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <%= f.label :name %><p>
+    <%= f.text_field :name %><p>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+    <%= f.label :email %><p>
+    <%= f.email_field :email %><p>
+
+    <%= f.label :password %><p>
+    <%= f.password_field :password %><p>
+
+    <%= f.label :password_confirmation %><p>
+    <%= f.password_field :password_confirmation %><p>
+      <p>プロフィール画像をアップロード</p>
+
+
+    <%= f.submit "Edit my account" %>
+  <% end %>
