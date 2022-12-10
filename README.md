@@ -30,11 +30,7 @@ $ rails s
 
 <br>
 
-# カタログ設計
-https://docs.google.com/spreadsheets/d/1DlzgyfpTOnBQto6i_F5fZoG28kJTXDywKmAxUsBAAew/edit?usp=sharing
-<br>
-
-# テーブル定義書
+# カタログ設計,テーブル定義書
 https://docs.google.com/spreadsheets/d/1DlzgyfpTOnBQto6i_F5fZoG28kJTXDywKmAxUsBAAew/edit?usp=sharing
 <br>
 
