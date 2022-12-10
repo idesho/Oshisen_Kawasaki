@@ -31,11 +31,11 @@ $ rails s
 <br>
 
 # カタログ設計
-
+https://docs.google.com/spreadsheets/d/1DlzgyfpTOnBQto6i_F5fZoG28kJTXDywKmAxUsBAAew/edit?usp=sharing
 <br>
 
 # テーブル定義書
-
+https://docs.google.com/spreadsheets/d/1DlzgyfpTOnBQto6i_F5fZoG28kJTXDywKmAxUsBAAew/edit?usp=sharing
 <br>
 
 # ワイヤーフレーム
@@ -43,7 +43,7 @@ $ rails s
 <br>
 
 # ER図
-![ER](readme/comoer.png)
+![ER](readme/er.drawio.png)
 
 <br>
 
