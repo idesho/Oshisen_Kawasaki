@@ -44,4 +44,4 @@ https://docs.google.com/spreadsheets/d/1DlzgyfpTOnBQto6i_F5fZoG28kJTXDywKmAxUsBA
 <br>
 
 # 画面遷移図
-![Screen](readme/COMOgamensenizu.jpg)
+![Screen](readme/%E9%81%B7%E7%A7%BB%E5%9B%B3.png)
