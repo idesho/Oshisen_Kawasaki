@@ -8,14 +8,14 @@
 
 # 就職Termの技術
 
-* rails_admin
+* ec2
 * お気に入り機能
 
 
 <br>
 
 # カリキュラム外の技術
-* ransackによる検索機能
+* gmaps4rails
 
 <br>
 
