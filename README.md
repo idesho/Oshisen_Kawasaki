@@ -44,4 +44,4 @@ https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&n
 <br>
 
 # 画面遷移図
-![Screen](readme/%E9%81%B7%E7%A7%BB%E5%9B%B3.png)
+![Screen](readme/遷移図.png)
