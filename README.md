@@ -39,7 +39,7 @@ https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&n
 <br>
 
 # ER図
-![ER](readme/er.drawio.png)
+![ER](readme/er図.png)
 
 <br>
 
