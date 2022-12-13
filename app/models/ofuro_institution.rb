@@ -1,0 +1,2 @@
+class OfuroInstitution < ApplicationRecord
+end

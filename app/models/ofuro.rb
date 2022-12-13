@@ -1,0 +1,2 @@
+class Ofuro < ApplicationRecord
+end
