@@ -6,4 +6,6 @@ class User < ApplicationRecord
     has_secure_password
     validates :password, length: { minimum: 6 }
     validates :nickname, uniqueness: true
+    has_many :favorites, dependent: :destroy
+    has_many :favorite_ofuros, through: :favorites, source: :ofuro
 end
