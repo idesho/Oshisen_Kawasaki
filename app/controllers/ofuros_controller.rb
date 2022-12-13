@@ -1,4 +1,4 @@
-class ofurosController < ApplicationController
+class OfurosController < ApplicationController
   before_action :set_ofuro, only: %i[ show edit update destroy ]
   # GET /ofuros or /ofuros.json
   def index
