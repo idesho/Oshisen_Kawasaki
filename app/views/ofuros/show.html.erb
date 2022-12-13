@@ -1,4 +1,31 @@
 <p id="notice"><%= notice %></p>
 
+  <% if @favorite.present? %>
+    <%= link_to 'お気に入りを解除', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'お気に入りに登録', favorites_path(ofuro_id: @ofuro.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ofuro.name %>
+</p>
+<p>
+  <strong>Introduction:</strong>
+  <%= @ofuro.introduction %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @ofuro.address %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @ofuro.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%= @ofuro.longitude %>
+</p>
+
 <%= link_to 'Edit', edit_ofuro_path(@ofuro) %> |
 <%= link_to 'Back', ofuros_path %>
