@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/admin", to: "application#check"
   mount RailsAdmin::Engine => '/admins', as: 'rails_admin'
   post '/guest', to: 'guest_sessions#create'
+  post '/guest_admin', to: 'guest_sessions#create_admin'
+
   resources :tops, only: [:index]
   resources :institutions
   resources :ofuros
