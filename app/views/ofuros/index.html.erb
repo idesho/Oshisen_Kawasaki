@@ -4,11 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Introduction</th>
       <th>Address</th>
-      <th>Prefecture</th>
-      <th>Latitude</th>
-      <th>Longitude</th>    
 
       <th colspan="3"></th>
     </tr>
@@ -16,18 +12,22 @@
     <% @ofuros.each do |ofuro| %>
       <tr>
         <td><%= ofuro.name %></td>
-        <td><%= ofuro.introduction %></td>
-        <td><%= ofuro.address %></td>
-        <td><%= ofuro.latitude %></td>
-        <td><%= ofuro.longitude %></td>
-        
+        <td><%= ofuro.address %></td>        
 
         <td><%= link_to 'Show', ofuro %></td>
-        <td><%= link_to 'Edit', edit_ofuro_path(ofuro) %></td>
-        <td><%= link_to 'Destroy', ofuro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if logged_in? %>
+          <% if current_user.admin? %>
+            <td><%= link_to 'Edit', edit_ofuro_path(ofuro) %></td>
+            <td><%= link_to 'Destroy', ofuro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-<%= link_to 'New ofuro', new_ofuro_path %>
+<% if logged_in? %>
+  <% if current_user.admin? %>
+    <%= link_to 'New Ofuro', new_ofuro_path %>
+  <% end %>
+<% end %>
