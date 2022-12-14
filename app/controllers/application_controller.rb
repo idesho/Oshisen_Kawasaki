@@ -1,21 +1,24 @@
 class ApplicationController < ActionController::Base
     include SessionsHelper
-    before_action :require_login
-    before_action :login_required
+    #before_action :login_required
     before_action :store_location #userがログイン前にいた場所を覚えておく
-
     def store_location
-        session[:return_to] = request.url
+      session[:return_to] = request.url
+      #user.save[:return_to] = request.url
     end
-
-    private
-
-    def login_required
-        redirect_to new_session_path unless current_user
+  
+    def check
+      if current_user&.admin?
+        redirect_to rails_admin_path
+      else
+        ridirect_to root_path,
+        notice: '管理者以外はアクセスできません'
+      end
     end
-
-    def not_authenticated
-        flash[:info] = 'ログインしてください'
-        redirect_to main_app.login_path #main_appのプレフィックスをつける
-    end
-end
+  
+    #private
+  
+    #def login_required
+    #  redirect_to new_session_path unless current_user
+    #end
+  end
