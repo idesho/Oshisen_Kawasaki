@@ -19,4 +19,6 @@ User.create!([
     { name:"和田", nickname:"リュージくん", email:"test_11@example.com", password: "123456" },
     { name:"武", nickname:"豊くん", email:"test_12@example.com", password: "123456" },
     { name:"岩田", nickname:"ジーニアス", email:"test_13@example.com", password: "123456" },
+    { name:"ゲスト", nickname:"ゲストくん", email:"test@example.com", password: "123456" },
+  ])
   ])

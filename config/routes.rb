@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  root "ofuros#top"
+  
   get "/admin", to: "application#check"
   mount RailsAdmin::Engine => '/admins', as: 'rails_admin'
-  
-  root "tops#index"
+  post '/guest', to: 'guest_sessions#create'
   resources :tops, only: [:index]
   resources :institutions
   resources :ofuros
