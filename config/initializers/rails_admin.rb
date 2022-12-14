@@ -1,10 +1,11 @@
 RailsAdmin.config do |config|
+  config.parent_controller = 'ApplicationController' 
   config.authenticate_with do
     require_login
   end
   config.current_user_method(&:current_user)
 
-  config.parent_controller = 'ApplicationController' 
+
   config.authorize_with :cancancan 
 
   config.actions do

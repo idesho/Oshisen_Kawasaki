@@ -4,7 +4,7 @@
 	<% if @user.image.present? %>
 		<%= image_tag @user.image.url %>
 	<% else %>
-		<%= image_tag 'default.png' %>
+		<%= image_tag 'default.jpeg' %>
 	<% end %>
 <p>メールアドレス: <%= @user.email %></p>
 <%= link_to_if(true, 'plofile_Edit', edit_user_path(@user)) %>

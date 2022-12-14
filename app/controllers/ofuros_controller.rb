@@ -7,15 +7,28 @@ class OfurosController < ApplicationController
 
   # GET /ofuros/1 or /ofuros/1.json
   def show
-    @favorite = current_user.favorites.find_by(ofuro_id: @ofuro.id)
+    @favorite = current_user.favorites.find_by(ofuro_id: @ofuro.id) if logged_in?
   end
 
   # GET /ofuros/new
   def new
-    @ofuro = ofuro.new
+    unless logged_in?
+      redirect_to ofuros_path and return
+    end
+    if current_user != @user
+      unless current_user.admin?
+        redirect_to ofuros_path
+      end
+    end
+    @ofuro = Ofuro.new
   end
   # GET /ofuros/1/edit
   def edit
+    if current_user != @user
+      unless current_user.admin?
+      redirect_to ofuros_path
+      end
+    end
   end
   # POST /ofuros or /ofuros.json
   def create
@@ -54,7 +67,7 @@ class OfurosController < ApplicationController
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_ofuro
-      @ofuro = ofuro.find(params[:id])
+      @ofuro = Ofuro.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
