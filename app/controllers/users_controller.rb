@@ -20,12 +20,10 @@ class UsersController < ApplicationController
   end
 
   def show
-  #  binding.irb
-  #redirect_to ofuros_path unless params[:id] == current_user.id.to_s
-  @user = User.find(params[:id])
-  #@ofuros = @user.ofuros
-  favorites = Favorite.where(user_id: current_user.id).pluck(:ofuro_id)
-  @favorite_list = Ofuro.find(favorites)
+    @user = User.find(params[:id])
+    favorites = Favorite.where(user_id: current_user.id).pluck(:ofuro_id)
+    @favorite_list = Ofuro.find(favorites)
+    @comments = @user.comments
   end
 
   def edit
