@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<% unless @ofuro.user_id == current_user.id %>
 
   <% if @favorite.present? %>
     <%= link_to 'お気に入りを解除', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>

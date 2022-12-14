@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "ofuros#index"
+  root "tops#index"
+  resources :tops, only: [:index]
   resources :institutions
   resources :ofuros
   resources :users
