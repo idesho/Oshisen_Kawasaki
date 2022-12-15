@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
-<% unless @ofuro.user_id == current_user.id %>
+
 
 <p>
   <h3>銭湯名 : <%= @ofuro.name %></h3>
 </p>
 
 <p>
-  <%= image_tag @ofuro.main_image.url, class:'main_image' %>
+  <%= image_tag @ofuro.image.url, class:'image' %>
 </p>
 
     <% if logged_in? %>
