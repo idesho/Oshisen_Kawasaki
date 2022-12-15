@@ -20,11 +20,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    favorites = Favorite.where(user_id: current_user.id).pluck(:ofuro_id)
-    @favorite_list = Ofuro.find(favorites)
-  end
-
+    unless logged_in?
+      redirect_to root_path and return
+    end
+    if current_user != @user
+      redirect_to root_path
+    end
+  @user = User.find(params[:id])
+  favorites = Favorite.where(user_id: current_user.id).pluck(:ofuro_id)
+  @favorite_list = Ofuro.find(favorites)
+end
+  
   def edit
     @user = User.find(params[:id])
     if current_user != @user
@@ -35,7 +41,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user.id),notice: "編集しました！"
+      redirect_to user_path(@user.id),notice: "編集しました"
     else
       render :edit
     end
@@ -49,6 +55,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation, :image, :image_cache)
+  end
+
+  def new_user_redirect_back_or(default)
+    redirect_to(session[:previous_url] || default)
+    session.delete(:previous_url)
   end
 
   def currect_user

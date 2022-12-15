@@ -1,31 +1,31 @@
 <h1>新規登録</h1>
 
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
-    <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "件のエラー") %> が発生したため <%= @user.name %> が作成できませんでした:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 <%= form_with(model: @user, local: true) do |f| %>  
 <p><%= f.label :name %></p>
-<p><%= f.text_field :name %></p>
+<p><%= f.text_field :name , placeholder:"例:川崎 太郎"%></p>
 
 <p><%= f.label :nickname%></p>
-<p><%= f.text_field :nickname %></p>
+<p><%= f.text_field :nickname , placeholder:"例:銭湯さん" %></p>
 
 <p><%= f.label :email %></p>
-<p><%= f.email_field :email %></p>
+<p><%= f.email_field :email , placeholder:"例:ofuro@setou.com"%></p>
 
 <p><%= f.label :password %></p>
-<p><%= f.password_field :password %></p>
+<p><%= f.password_field :password , placeholder:"英数字を6文字以上入力"%></p>
 
 <p><%= f.label :password_confirmation %></p>
-<p><%= f.password_field :password_confirmation %></p>
+<p><%= f.password_field :password_confirmation , placeholder:"もう一度入力してね"%></p>
 
 <p><%= f.submit "Create my account" %></p>
 <% end %>

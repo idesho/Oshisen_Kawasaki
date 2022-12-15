@@ -58,7 +58,7 @@ RSpec.describe "/ofuros", type: :request do
 
   describe "POST /create" do
     context "with valid parameters" do
-      it "creates a new Ofuro" do
+      it "creates a " do
         expect {
           post ofuros_url, params: { ofuro: valid_attributes }
         }.to change(Ofuro, :count).by(1)

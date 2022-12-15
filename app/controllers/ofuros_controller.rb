@@ -32,8 +32,13 @@ class OfurosController < ApplicationController
   end
   # POST /ofuros or /ofuros.json
   def create
-    @ofuro = ofuro.new(ofuro_params)
-    respond_to do |format|
+    @ofuro = Ofuro.new(ofuro_params) if logged_in?
+      if current_user != @user
+        unless current_user.admin?
+        redirect_to ofuros_path
+        end
+      end
+      respond_to do |format|
       if @ofuro.save
         format.html { redirect_to ofuro_url(@ofuro), notice: "ofuro was successfully created." }
         format.json { render :show, status: :created, location: @ofuro }
@@ -72,6 +77,6 @@ class OfurosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ofuro_params
-      params.require(:ofuro).permit(:name, :introduction, :address, :prefecture, :latitude, :longitude, :main_image,:image_cache)
+      params.require(:ofuro).permit(:name, :introduction, :address, :prefecture, :latitude, :longitude, :main_image,:image_cache, :user, :user_id)
     end
 end
