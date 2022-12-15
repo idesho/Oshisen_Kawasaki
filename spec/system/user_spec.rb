@@ -1,13 +1,13 @@
 # require 'rails_helper'
 
-# # お気に入り公園が確認できる
-# # お気に入り公園のリンクを押すとお気に入りの公園ページへ遷移する
+# # お気に入り銭湯が確認できる
+# # お気に入り銭湯のリンクを押すとお気に入りの銭湯ページへ遷移する
 
 # RSpec.describe 'ユーザー機能テスト', type: :system do
 # let!(:ofuro) { FactoryBot.create(:ofuro)}
 
 #   context 'ユーザー新規登録' do
-#     it '公園の口コミページから新規登録したら、元いたページへ遷移する' do
+#     it '銭湯の口コミページから新規登録したら、元いたページへ遷移する' do
 #       visit ofuro_path(1)
 #       click_link 'ログインして口コミを投稿する'
 #       click_link '新規登録'
@@ -61,7 +61,7 @@
 #     end
 #   end
 #   context 'ユーザーページのお気に入り確認テスト' do
-#     it 'お気に入りの公園リンクを押すとページにいける' do
+#     it 'お気に入りの銭湯リンクを押すとページにいける' do
 #     FactoryBot.create(:user)
 #       visit new_session_path
 #       fill_in 'session[email]', with: 'test@gmail.com'
@@ -70,8 +70,8 @@
 #       visit ofuro_path(1)
 #       click_link 'お気に入りする'
 #       click_link 'マイページ'
-#       click_link 'この公園ページへ行く'
-#       expect(page).to have_content 'テスト公園'
+#       click_link 'この銭湯ページへ行く'
+#       expect(page).to have_content 'テスト銭湯'
 #     end
 #   end
 # end
