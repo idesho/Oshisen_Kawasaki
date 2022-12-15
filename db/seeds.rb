@@ -22,3 +22,7 @@ User.create!([
     { name:"ゲスト", nickname:"ゲストくん", email:"test@example.com", password: "123456" },
     { name:"ゲストアドミン", nickname:"ゲストアドミン", email:"test_admin@example.com", password:"123456", admin: true}
   ])
+
+  Ward.create!([
+    {name:"川崎区"},{name:"幸区"},{name:"中原区"},{name:"高津区"},{name:"多摩区"},{name:"宮前区"},{name:"麻生区"}
+  ])
