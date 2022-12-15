@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2022_12_13_092131) do
     t.float "latitude", null: false
     t.float "longitude", null: false
     t.bigint "ward_id", null: false
+    t.text "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["ward_id"], name: "index_ofuros_on_ward_id"

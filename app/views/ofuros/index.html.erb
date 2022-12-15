@@ -14,8 +14,7 @@
       <tr>
         <td><%= ofuro.name %></td>
         <td><%= ofuro.address %></td>        
-
-        <td><%= link_to '詳細をコチラ', ofuro %></td>
+        <td><%= link_to '詳細はコチラ', ofuro %></td>
         <% if logged_in? %>
           <% if current_user.admin? %>
             <td><%= link_to 'Edit', edit_ofuro_path(ofuro) %></td>

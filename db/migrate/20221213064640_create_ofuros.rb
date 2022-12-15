@@ -7,6 +7,7 @@ class CreateOfuros < ActiveRecord::Migration[6.1]
       t.float :latitude, null: false
       t.float :longitude, null: false
       t.references :ward, null: false, foreign_key: true
+      t.text :image
       
       t.timestamps
     end

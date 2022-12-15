@@ -1,16 +1,14 @@
 class OfurosController < ApplicationController
   before_action :set_ofuro, only: %i[ show edit update destroy ]
-  # GET /ofuros or /ofuros.json
+
   def index
     @ofuros = Ofuro.all
   end
 
-  # GET /ofuros/1 or /ofuros/1.json
   def show
     @favorite = current_user.favorites.find_by(ofuro_id: @ofuro.id) if logged_in?
   end
 
-  # GET /ofuros/new
   def new
     unless logged_in?
       redirect_to ofuros_path and return
@@ -22,7 +20,7 @@ class OfurosController < ApplicationController
     end
     @ofuro = Ofuro.new
   end
-  # GET /ofuros/1/edit
+
   def edit
     if current_user != @user
       unless current_user.admin?
@@ -30,7 +28,7 @@ class OfurosController < ApplicationController
       end
     end
   end
-  # POST /ofuros or /ofuros.json
+
   def create
     @ofuro = Ofuro.new(ofuro_params) if logged_in?
       if current_user != @user
@@ -48,7 +46,7 @@ class OfurosController < ApplicationController
       end
     end
   end
-  # PATCH/PUT /ofuros/1 or /ofuros/1.json
+
   def update
     respond_to do |format|
       if @ofuro.update(ofuro_params)
@@ -60,6 +58,7 @@ class OfurosController < ApplicationController
       end
     end
   end
+  
   # DELETE /ofuros/1 or /ofuros/1.json
   def destroy
     @ofuro.destroy
