@@ -38,7 +38,7 @@ class OfurosController < ApplicationController
       end
       respond_to do |format|
       if @ofuro.save
-        format.html { redirect_to ofuro_url(@ofuro), notice: "ofuro was successfully created." }
+        format.html { redirect_to ofuro_url(@ofuro), notice: "作成されました" }
         format.json { render :show, status: :created, location: @ofuro }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -50,7 +50,7 @@ class OfurosController < ApplicationController
   def update
     respond_to do |format|
       if @ofuro.update(ofuro_params)
-        format.html { redirect_to ofuro_url(@ofuro), notice: "ofuro was successfully updated." }
+        format.html { redirect_to ofuro_url(@ofuro), notice: "更新されました" }
         format.json { render :show, status: :ok, location: @ofuro }
       else
         format.html { render :edit, status: :unprocessable_entity }
