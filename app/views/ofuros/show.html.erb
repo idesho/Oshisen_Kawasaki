@@ -29,16 +29,10 @@
   <strong>Address:</strong>
   <%= @ofuro.address %>
 </p>
-<p>
-  <strong>Latitude:</strong>
-  <%= @ofuro.latitude %>
-</p>
-<p>
-  <strong>Longitude:</strong>
-  <%= @ofuro.longitude %>
-</p>
 
 
 
-<%= link_to 'Edit', edit_ofuro_path(@ofuro) %> |
+<% if current_user.admin? %>
+<%= link_to 'Edit', edit_ofuro_path(@ofuro) %> 
+<%end%>
 <%= link_to 'Back', ofuros_path %>
