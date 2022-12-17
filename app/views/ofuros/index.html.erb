@@ -1,6 +1,18 @@
 <div class="container ">
 <p id="notice"><%= notice %></p>
 <h1>銭湯一覧</h1>
+
+<form method="post" action="example.cgi">
+<p>
+  <select name="example2">
+    <% @wards.each do |ward| %>
+      <option value="<%= ward.id  %>"><%= ward.name  %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="送信する">
+</p>
+</form>
+
 <table class="table table-hover">
   <thead>
     <tr>
