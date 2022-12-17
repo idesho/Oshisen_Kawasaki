@@ -3,6 +3,7 @@ class OfurosController < ApplicationController
 
   def index
     @ofuros = Ofuro.all
+    @wards = Ward.all
   end
 
   def show
