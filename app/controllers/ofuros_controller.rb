@@ -1,10 +1,19 @@
 class OfurosController < ApplicationController
-  before_action :set_ofuro, only: %i[ show edit update destroy ]
+  before_action :set_ofuro, only: %i[ show edit update destroy]
 
   def index
     @ofuros = Ofuro.all
-    @wards = Ward.all
+    @q = Ofuro.ransack(params[:q])
+    @ofuros = Ofuros.where(Ward.where(ward_id: params[:q][:ward_id])) if params[:q].present? && params[:q][:name].present?
+    @ofuros = @q.result
   end
+
+  def search
+    @q = Ofuro.ransack(params[:q]) # 送られてきたパラメータを元にテーブルからデータを検索する
+    @ofuros = @q.result.includes(:ward) # 検索結果をActiveRecord_Relationのオブジェクトに変換
+    render "ofuros/index"
+  end
+
 
   def show
     @favorite = current_user.favorites.find_by(ofuro_id: @ofuro.id) if logged_in?
@@ -77,6 +86,6 @@ class OfurosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ofuro_params
-      params.require(:ofuro).permit(:name, :introduction, :address, :prefecture, :latitude, :longitude, :main_image,:image_cache, :user, :user_id)
+      params.require(:ofuro).permit(:name, :introduction, :address, :prefecture, :latitude, :longitude, :main_image,:image_cache, :user, :user_id,:ward)
     end
 end
