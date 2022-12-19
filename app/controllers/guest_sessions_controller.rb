@@ -8,7 +8,6 @@ class GuestSessionsController < ApplicationController
         user = User.find_by(email: 'test@example.com')
         log_in(user)
         flash[:success] = 'ゲストユーザーでログインしました'
-        flash[:warning] = 'よろしくお願いします！'
         new_user_redirect_back_or(user)
     end
 
