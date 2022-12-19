@@ -27,7 +27,7 @@ gem 'gmaps4rails'
 gem 'geocoder'
 gem 'dotenv-rails'
 
- gem 'unicorn'
+gem 'unicorn'
 # gem "capistrano", "~> 3.10", require: false
 # gem "capistrano-rails", "~> 1.6", require: false
 # gem 'capistrano-safe-deploy-to'
