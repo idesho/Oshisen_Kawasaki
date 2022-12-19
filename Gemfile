@@ -29,7 +29,6 @@ gem 'dotenv-rails'
 
 gem 'unicorn'
 gem 'capistrano3-unicorn'
-gem 'carrierwave'
 # gem "capistrano", "~> 3.10", require: false
 # gem "capistrano-rails", "~> 1.6", require: false
 # gem 'capistrano-safe-deploy-to'
@@ -47,6 +46,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'launchy'
+  gem 'carrierwave'
   gem 'mini_magick'
 end
 
