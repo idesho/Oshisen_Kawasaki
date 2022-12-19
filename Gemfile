@@ -27,10 +27,10 @@ gem 'gmaps4rails'
 gem 'geocoder'
 gem 'dotenv-rails'
 
-gem "capistrano", "~> 3.10", require: false
-gem "capistrano-rails", "~> 1.6", require: false
-gem 'capistrano-safe-deploy-to'
-gem 'capistrano-rbenv', '~> 2.2'   
+# gem "capistrano", "~> 3.10", require: false
+# gem "capistrano-rails", "~> 1.6", require: false
+# gem 'capistrano-safe-deploy-to'
+# gem 'capistrano-rbenv', '~> 2.2'   
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,6 +55,11 @@ group :development do
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.6", require: false
+  gem 'capistrano-safe-deploy-to'
+  gem 'capistrano-rbenv', '~> 2.2'   
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
 
