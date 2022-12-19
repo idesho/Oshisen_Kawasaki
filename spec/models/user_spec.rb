@@ -46,14 +46,14 @@ RSpec.describe 'userモデル機能', type: :model do
         password_confirmation: "123456"
       )
 
-      user = User.new(
+      user = User.create(
         name: "Peter",
         nickname: "めー",
         email: "test@example.com",
         password: "123456",
         password_confirmation: "123456"
       )
-      expect(user).to eq 'メールアドレスはすでに存在します'
+      expect(user).not_to be_valid
     end
   end
 
