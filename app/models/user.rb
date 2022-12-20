@@ -9,5 +9,5 @@ class User < ApplicationRecord
     validates :nickname, uniqueness: true
     has_many :favorites, dependent: :destroy
     has_many :favorite_ofuros, through: :favorites, source: :ofuro
-    mount_uploader :image, ImageUploader
+    # mount_uploader :image, ImageUploader
 end

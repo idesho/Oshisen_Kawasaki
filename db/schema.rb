@@ -24,22 +24,6 @@ ActiveRecord::Schema.define(version: 2022_12_13_092131) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "institutions", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "image", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "ofuro_institutions", force: :cascade do |t|
-    t.bigint "institution_id", null: false
-    t.bigint "ofuro_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["institution_id"], name: "index_ofuro_institutions_on_institution_id"
-    t.index ["ofuro_id"], name: "index_ofuro_institutions_on_ofuro_id"
-  end
-
   create_table "ofuros", force: :cascade do |t|
     t.string "name", null: false
     t.text "introduction", null: false
@@ -73,7 +57,5 @@ ActiveRecord::Schema.define(version: 2022_12_13_092131) do
 
   add_foreign_key "favorites", "ofuros"
   add_foreign_key "favorites", "users"
-  add_foreign_key "ofuro_institutions", "institutions"
-  add_foreign_key "ofuro_institutions", "ofuros"
   add_foreign_key "ofuros", "wards"
 end

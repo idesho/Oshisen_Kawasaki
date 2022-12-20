@@ -7,9 +7,10 @@
 
 <p>
   <% if @ofuro.image.present? %>
-    <%= image_tag @ofuro.image.url, class:'image' %>
+  <strong>Image</strong>
+  <%= image_tag @ofuro.image.variant(resize_to_limit: [500, 500]) if @ofuro.image.present? %>
   <% else %>
-	  <%= image_tag 'default.jpg' %>
+	<%= image_tag 'default.jpg' %>
 	<% end %>
 </p>
 
@@ -52,7 +53,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap" async defer></script>
 
 
-<% if current_user.admin? %>
+<% if user_signed_in? && current_user.admin?%>
 <%= link_to '編集', edit_ofuro_path(@ofuro) %> 
 <%end%>
 <%= link_to '戻る', ofuros_path %>
