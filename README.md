@@ -16,8 +16,9 @@
 
 # カリキュラム外の技術
 * rasack
+* gem 'dotenv-rails
 * gem 'geocoder'
-* gem 'dotenv-rails'
+
 <br>
 
 # 実行手順
