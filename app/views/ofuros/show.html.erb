@@ -7,10 +7,10 @@
 
 <p>
   <% if @ofuro.image.present? %>
-    <%= image_tag @ofuro.image.url, class:'image' %>
-    <%= @ofuro.image.url %>
+  <strong>Image</strong>
+  <%= image_tag @ofuro.image.variant(resize_to_limit: [500, 500]) if @ofuro.image.present? %>
   <% else %>
-	  <%= image_tag 'default.jpg' %>
+	<%= image_tag 'default.jpg' %>
 	<% end %>
 </p>
 
