@@ -91,6 +91,6 @@ class OfurosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ofuro_params
-      params.require(:ofuro).permit(:name, :introduction, :address, :prefecture, :latitude, :longitude, :main_image,:image_cache, :user, :user_id,:ward)
+      params.require(:ofuro).permit(:name, :introduction, :address, :prefecture, :latitude, :longitude, :main_image,:image_cache, :user, :user_id,:ward, :image)
     end
 end
