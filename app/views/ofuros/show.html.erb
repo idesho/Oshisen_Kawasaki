@@ -8,6 +8,7 @@
 <p>
   <% if @ofuro.image.present? %>
     <%= image_tag @ofuro.image.url, class:'image' %>
+    <%= @ofuro.image.url %>
   <% else %>
 	  <%= image_tag 'default.jpg' %>
 	<% end %>
