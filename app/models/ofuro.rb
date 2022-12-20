@@ -4,5 +4,4 @@ class Ofuro < ApplicationRecord
     belongs_to :ward
     # geocoded_by :name
     # after_validation :geocode
-    has_one_attached :image
 end
