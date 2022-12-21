@@ -20,7 +20,7 @@ RSpec.describe '管理者ログイン機能', type: :system do
         visit new_session_path
         fill_in 'session[email]', with: 'upaupa@gmail.com'
         fill_in 'session[password]', with: '123456'
-        click_on 'Log in'
+        click_button 'commit'
         visit rails_admin_path
         expect(page).to have_content '管理者以外はアクセス不可！'
       end
