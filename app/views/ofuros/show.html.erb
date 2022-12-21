@@ -7,7 +7,6 @@
 
 <p>
   <% if @ofuro.image.present? %>
-  <strong>Image</strong>
   <%= image_tag @ofuro.image.url if @ofuro.image.present? %>
   <% else %>
 	<%= image_tag 'default.jpg' %>
@@ -22,10 +21,6 @@
       <% end %>
     <% end %>
 
-<p>
-  <strong>銭湯名:</strong>
-  <%= @ofuro.name %>
-</p>
 <p>
   <strong>概要:</strong>
   <%= @ofuro.introduction %>
