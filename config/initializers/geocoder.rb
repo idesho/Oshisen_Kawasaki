@@ -1,1 +1,0 @@
-api_key: Rails.application.credentials.google_map_api_key
