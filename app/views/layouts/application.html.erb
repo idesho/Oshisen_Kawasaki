@@ -21,9 +21,9 @@
     <% else %>
        <li class="nav-item col-lg-auto"><%= link_to "新規登録", new_user_path , class:"nav-link py-3 fs-7"%>
        <li class="nav-item col-lg-auto"><%= link_to "ログイン", new_session_path , class:"nav-link py-3 fs-7"%>
-    <% end %>
        <li class="nav-item col-lg-auto"><%= link_to 'ゲストユーザー', guest_path, method: :post , class:"nav-link py-3 fs-7"%>
        <li class="nav-item col-lg-auto"><%= link_to 'ゲストユーザー(管理者)', guest_admin_path, method: :post , class:"nav-link py-3 fs-7"%>
+    <% end %>
     <% if logged_in? %>
        <li class="nav-item col-lg-auto"><%= link_to '銭湯一覧', ofuros_path, class:"nav-link py-3 fs-7"%>
     <% end %>

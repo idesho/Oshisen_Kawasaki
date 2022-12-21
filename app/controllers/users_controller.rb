@@ -54,7 +54,7 @@ end
   end
 
   def user_params
-    params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation, :image, :image_cache)
+    params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation, :image, :image_cache,:ofuro)
   end
 
   def new_user_redirect_back_or(default)
