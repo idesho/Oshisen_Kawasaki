@@ -46,7 +46,7 @@
       });
     }
   </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google_map_api_key %>&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap" async defer></script>
 
 <% if current_user.admin?%>
 <%= link_to '編集', edit_ofuro_path(@ofuro) %> 
