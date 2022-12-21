@@ -40,9 +40,14 @@
 <div type="text/javascript">
   <script>
     function initMap(){
+      const myPlace = { lat: <%= @ofuro.latitude %>, lng: <%= @ofuro.longitude %> }
       let map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: <%= @ofuro.latitude %>, lng: <%= @ofuro.longitude %> },
-      zoom: 15
+        center: myPlace,
+        zoom: 15
+      });
+      new google.maps.Marker({
+        position: myPlace,
+        map
       });
     }
   </script>
