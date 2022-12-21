@@ -7,10 +7,10 @@
 <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
 
 <p><%= f.label :メールアドレス %></p>
-<p><%= f.email_field :email %></p>
+<p><%= f.email_field :email , placeholder:"例:ofuro@setou.com"%></p>
 
 <p><%= f.label :パスワード %></p>
-<p><%= f.password_field :password %></p>
+<p><%= f.password_field :password , placeholder:"英数字を6文字以上入力"%></p>
 
 <p><%= f.submit "ログイン",class: "btn btn-blue"%></p>
 <% end %>

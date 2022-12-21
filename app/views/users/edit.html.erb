@@ -1,16 +1,16 @@
 <h1>プロフィール編集</h1>
   <%= form_with(model: @user, local: true) do |f| %>
     <%= f.label :name %><p>
-    <%= f.text_field :name %><p>
+    <%= f.text_field :name, placeholder:"例:川崎 太郎"%><p>
 
     <%= f.label :email %><p>
-    <%= f.email_field :email %><p>
+    <%= f.email_field :email, placeholder:"例:ofuro@setou.com"%><p>
 
     <%= f.label :password %><p>
-    <%= f.password_field :password %><p>
+    <%= f.password_field :password, placeholder:"英数字を6文字以上入力" %><p>
     
     <%= f.label :password_confirmation %><p>
-    <%= f.password_field :password_confirmation %><p>
+    <%= f.password_field :password_confirmation , placeholder:"もう一度入力してね"%><p>
       <p>プロフィール画像をアップロード</p>
     <%= f.file_field :image %><p>
     <%= f.hidden_field :image_cache %><p>
