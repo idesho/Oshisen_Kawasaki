@@ -17,11 +17,6 @@ class OfurosController < ApplicationController
 
   def show
     @favorite = current_user.favorites.find_by(ofuro_id: @ofuro.id) if logged_in?
-    # @hash = Gmaps4rails.build_markers(@place) do |place, marker|
-    #   marker.lat place.latitude
-    #   marker.lng place.longitude
-    #   marker.infowindow place.name
-    # end
   end
 
   def new
